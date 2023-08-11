@@ -1,0 +1,122 @@
+{
+  "data": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    }
+  ],
+  "info": [
+    {
+      "username": "SHUAYB",
+      "password": "Opeyemi",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 1
+    },
+    {
+      "username": "SHUAYB",
+      "password": "Opeyemi",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 2
+    },
+    {
+      "username": "SHUAYB",
+      "password": "Opeyemi",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 3
+    },
+    {
+      "username": "SHUAYB",
+      "password": "Opeyemi",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 4
+    },
+    {
+      "username": "SHUAYB",
+      "password": "Opeyemi",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 5
+    },
+    {
+      "username": "",
+      "password": "",
+      "email": "",
+      "id": 6
+    },
+    {
+      "username": "shuayb",
+      "password": "ope",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 7
+    },
+    {
+      "username": "shuayb",
+      "password": "ope",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 8
+    },
+    {
+      "username": "shuayb",
+      "password": "ope",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 9
+    },
+    {
+      "username": "opeyemi",
+      "password": "ope",
+      "email": "shuaybopeyemi@gmail.com",
+      "id": 10
+    },
+    {
+      "username": "opeyemi",
+      "password": "ope",
+      "id": 11
+    },
+    {
+      "username": "opeyemi",
+      "password": "ope",
+      "id": 12
+    },
+    {
+      "username": "john",
+      "password": "wale",
+      "email": "johnwale@yahoo.com",
+      "id": 13
+    },
+    {
+      "username": "john",
+      "password": "wale",
+      "id": 14
+    },
+    {
+      "username": "john",
+      "password": "ola",
+      "id": 15
+    }
+  ]
+}
