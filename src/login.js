@@ -24,7 +24,7 @@ function LoginPage() {
       body: JSON.stringify({ username: username, password: password })
     };
 
-    fetch("https://alfawzaaniy.pythonanywhere.com/users/login/", requestOptions)
+    fetch("https://alfawzaaniy.pythonanywhere.com/login", requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Invalid username or password");

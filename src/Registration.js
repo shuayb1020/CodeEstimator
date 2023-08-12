@@ -37,9 +37,9 @@ function Registration() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = { username, password, email, first_name, last_name };
-    fetch("https://alfawzaaniy.pythonanywhere.com/users/", {
+    fetch("https://alfawzaaniy.pythonanywhere.com/register", {
       credentials: 'include',
-      // mode: 'no-cors',
+      mode: 'cors',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
