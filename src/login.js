@@ -19,20 +19,12 @@ function LoginPage() {
     event.preventDefault();
     const requestOptions = {
       method: 'POST',
+      mode: "cors",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: username, password: password })
     };
 
-    fetch("https://alfawzaaniy.pythonanywhere.com/users/login/", requestOptions, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: username,
-        password: password,
-      }),
-    })
+    fetch("https://alfawzaaniy.pythonanywhere.com/users/login/", requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Invalid username or password");
