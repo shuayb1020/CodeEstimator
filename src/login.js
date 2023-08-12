@@ -23,7 +23,7 @@ function LoginPage() {
       body: JSON.stringify({ username: username, password: password })
     };
 
-    fetch("http://127.0.0.1:8000/user/login", requestOptions, {
+    fetch("https://alfawzaaniy.pythonanywhere.com/users/login/", requestOptions, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

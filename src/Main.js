@@ -40,7 +40,7 @@ function Main() {
       formData.append('title', title);
       formData.append('desc', desc);
 
-    fetch('http://127.0.0.1:8000/project/compare/', {
+    fetch('https://alfawzaaniy.pythonanywhere.com/project/compare/', {
         credentials: 'include',
         method: 'POST',
         body: formData,

@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 function Registration() {
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -35,7 +37,7 @@ function Registration() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = { username, password, email, first_name, last_name };
-    fetch("http://127.0.0.1:8000/user/register", {
+    fetch("https://alfawzaaniy.pythonanywhere.com/users/", {
       credentials: 'include',
       // mode: 'no-cors',
       method: 'POST',
@@ -50,10 +52,14 @@ function Registration() {
       })
       .then((data) => {
         console.log('Registration successful!', data);
+        setIsPending(false);
+        setError(null);
         navigate("/");
       })
       .catch((error) => {
         console.error('Error registering user:', error);
+        setError(error.message);
+        setIsPending(false);
       });
   };
 
@@ -115,7 +121,10 @@ function Registration() {
           />
         </label>
         <br />
-        <button type="submit">Register</button>
+        {/* <button type="submit">Register</button> */}
+        {!isPending && <button type="submit">Register</button>}
+        {isPending && <button disabled>Loading...</button>}
+        {error && <div className='error'>{error}</div>}
         <p> Already have an account? <Link to={'/'}>Login</Link></p>
       </form>
     </div>
