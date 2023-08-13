@@ -65,11 +65,11 @@ function Registration() {
 
   return (
     <div className='registration'>
-      <h2>Registeration Page</h2>
+      <h2>Sign Up</h2>
 
       <form onSubmit={handleSubmit}>
         <label>
-          Firstname:
+          First Name:
           <input 
           type="text" 
           value={first_name} 
@@ -79,7 +79,7 @@ function Registration() {
         </label>
         <br />
         <label>
-          Lastname:
+          Last Name:
           <input 
           type="text" 
           value={last_name} 
@@ -100,7 +100,7 @@ function Registration() {
         <br />
 
         <label>
-          Username:
+          User Name:
           <input 
           type="text" 
           value={username} 
@@ -125,7 +125,7 @@ function Registration() {
         {!isPending && <button type="submit">Register</button>}
         {isPending && <button disabled>Loading...</button>}
         {error && <div className='error'>{error}</div>}
-        <p> Already have an account? <Link to={'/'}>Login</Link></p>
+        <p> Already have an account? <Link to={'/'}>Sign In</Link></p>
       </form>
     </div>
   );

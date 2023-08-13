@@ -44,10 +44,10 @@ function LoginPage() {
 
   return (
     <div className ='login'>
-    <h2>Login Page</h2>
+    <h2>Sign In</h2>
       <form onSubmit={handleFormSubmit}>
         <label>
-          Username:
+          User Name:
           <input 
           type="text" 
           value={username} 
@@ -63,7 +63,7 @@ function LoginPage() {
           required/>
         </label>
         <button type="submit">Login</button>
-        <p> don't have an account? <Link to={'/Registration'}>Crete account</Link></p>
+        <p> Don't have an account? <Link to={'/Registration'}>Create an account</Link></p>
 
         {error && <div>{error}</div>}
       </form>
