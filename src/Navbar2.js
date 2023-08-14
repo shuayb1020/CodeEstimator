@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 // import './styles.css';
 // import favicon from './favicon.ico'
 
@@ -13,16 +14,16 @@ const NavigationBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="/">CodeEstimator</a>
+        <Link to={"/Index"}>CodeEstimator</Link>
         {/* <img src={favicon} alt="logo" height={100} width={80} /> */}
 
       </div>
       <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
-        <ul className="navbar-links">
+        {/* <ul className="navbar-links">
           <li><a href="/index">Home</a></li>
           <li><a href="/">Profile</a></li>
           <li><a href="/">Logout</a></li>
-        </ul>
+        </ul> */}
       </div>
       <button className="navbar-toggle" onClick={toggleMenu}>
         <span className="toggle-icon"></span>

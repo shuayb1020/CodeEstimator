@@ -121,7 +121,7 @@ function Main() {
               onChange={handleFile1Change}
               required
             />
-            <span>Choose File 1</span>
+            <span>Choose File 1</span> <span>{file1 && <span className='filename'>{file1.name}</span>}</span>
           </label>
         </div>
         <div className="file-upload">
@@ -133,7 +133,7 @@ function Main() {
               onChange={handleFile2Change}
               required
             />
-            <span>Choose File 2</span>
+            <span>Choose File 2</span> <span>{file2 && <span className='filename'>{file2.name} </span>} </span>
           </label>
         </div>
         {/* <button type="submit">Calculate Metrics</button> */}
