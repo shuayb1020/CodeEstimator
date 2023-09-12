@@ -169,8 +169,8 @@ function Main() {
               <thead>
                 <tr>
                   <th>Metric</th>
-                  <th>File 1</th>
-                  <th>File 2</th>
+                  <th>{file1.name}</th>
+                  <th>{file2.name}</th>
                 </tr>
               </thead>
               <tbody>
