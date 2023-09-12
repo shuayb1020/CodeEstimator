@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index2.css';
 import NavigationBar from './Navbar2';
+// import { Link } from 'react-router-dom';
 // import {  useNavigate} from 'react-router-dom';
 
 
@@ -12,6 +13,8 @@ function Main() {
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [result, setResult] = useState(null);
+    const [dollar, setDollar] = useState('');
+
     // const navigate =  useNavigate();
 
 
@@ -30,6 +33,10 @@ function Main() {
     setDesc(event.target.value);
   };
 
+  const handleDollarChange = (event) => {
+    setDollar(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -39,7 +46,7 @@ function Main() {
       formData.append('file2', file2);
       formData.append('title', title);
       formData.append('desc', desc);
-
+// 'https://alfawzaaniy.pythonanywhere.com/project/compare/
     fetch('https://alfawzaaniy.pythonanywhere.com/project/compare/', {
         credentials: 'include',
         method: 'POST',
@@ -57,17 +64,10 @@ function Main() {
           console.log('Upload successful:', data);
         //   console.log(data)
           // Handle successful response from server
-          setResult(data)
+          setResult(data);
           setIsPending(false);
           setError(null);
-          // localStorage.setItem('comparisonResult', JSON.stringify(data));
-          // Store the new result along with previous results
-        // const storedResults = localStorage.getItem('comparisonResults');
-        // const parsedResults = storedResults ? JSON.parse(storedResults) : [];
-        // const updatedResults = [...parsedResults, data];
-        // localStorage.setItem('comparisonResults', JSON.stringify(updatedResults));
-          // navigate('/result');
-
+          
 
         })
         .catch((error) => {
@@ -86,7 +86,7 @@ function Main() {
     <NavigationBar/>
     <div className="container">
 
-      <h1>Select two code file: </h1>
+      <h1>Select two code files: </h1>
       
 
       <form onSubmit={handleSubmit}>
@@ -109,6 +109,18 @@ function Main() {
             id="description"
             value={desc}
             onChange={handleDescChange}
+            required
+          />
+        </div>
+        {/* ....... */}
+        <div className='form-group'>
+          <label htmlFor="dollar">Enter Present Dollar Rate:</label>
+          <input
+            type='number'
+            name="dollar"
+            id="dollar"
+            value={dollar}
+            onChange={handleDollarChange}
             required
           />
         </div>
@@ -137,7 +149,8 @@ function Main() {
           </label>
         </div>
         {/* <button type="submit">Calculate Metrics</button> */}
-        {!isPending && <button type="submit">Compare</button>}
+        {!isPending &&<button type="submit">Compare</button>}
+        {/* {!isPending && <Link to={".result"}></Link>} */}
         {isPending && <button disabled>Loading...</button>}
         {error && <div className='error'>{error}</div>}
       </form>
@@ -150,7 +163,7 @@ function Main() {
       )} */}
 
       {result && (
-          <div className="result">
+          <div className="result" id='result'>
             <h2>Comparison Analysis</h2>
             <table border={2}>
               <thead>
@@ -163,19 +176,19 @@ function Main() {
               <tbody>
                 
                 <tr>
-                  <td>Effort required</td>
-                  <td>{result.metrics1.E}</td>
+                  <td>Effort required (Person-Month)</td>
+                  <td>{(result.metrics1.E)}</td>
                   <td>{result.metrics2.E}</td>
                 </tr>
                 <tr>
-                  <td>Time required</td>
+                  <td>Time required (Seconds)</td>
                   <td>{result.metrics1.T}</td>
                   <td>{result.metrics2.T}</td>
                 </tr>
                 <tr>
-                  <td>Cost</td>
-                  <td>{result.metrics1.cost}</td>
-                  <td>{result.metrics2.cost}</td>
+                  <td>Cost (Naira)</td>
+                  <td>{(result.metrics1.cost)*dollar}</td>
+                  <td>{(result.metrics2.cost)*dollar}</td>
                 </tr>
                 <tr>
                   <td>Best</td>

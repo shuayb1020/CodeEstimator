@@ -41,6 +41,17 @@
     box-sizing: border-box;
 
   }
+  .container input[type="number"]{
+    width: 100%;
+    padding: 6px 5px;
+    margin: 10px 0;
+    /* padding: 10px; */
+    /* width: 100%; */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+  }
 /*   
   textarea {
     height: 100px;
@@ -110,6 +121,7 @@
 
   table{
     border: 5px;
+    /* width: auto */
     width: auto;
   }
 
