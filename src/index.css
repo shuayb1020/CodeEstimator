@@ -38,9 +38,9 @@ code {
   padding: 100px;
   border: #f1356d dashed 5px;
 }
-input{
+/* input{
   cursor: grab;
-}
+} */
 
 .container{
   margin-top: 25px;
